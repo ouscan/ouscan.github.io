@@ -18,8 +18,8 @@
   
   <entry>
     <title>hexo + github 创建博客</title>
-    <link href="http://yoursite.com/2019/04/14/hexo-github-%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://yoursite.com/2019/04/14/hexo-github-创建博客/</id>
+    <link href="http://yoursite.com/uncategorized/hexo-github-%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://yoursite.com/uncategorized/hexo-github-创建博客/</id>
     <published>2019-04-14T10:00:40.000Z</published>
     <updated>2019-04-14T10:00:40.262Z</updated>
     
@@ -32,8 +32,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2019/04/14/hello-world/"/>
-    <id>http://yoursite.com/2019/04/14/hello-world/</id>
+    <link href="http://yoursite.com/uncategorized/hello-world/"/>
+    <id>http://yoursite.com/uncategorized/hello-world/</id>
     <published>2019-04-14T08:53:03.413Z</published>
     <updated>2019-04-14T08:53:03.413Z</updated>
     
