@@ -1821,7 +1821,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #baff29;
+  background: #deddff;
 }
 .feed-link,
 .chat {
@@ -2917,9 +2917,10 @@ a#download:hover {
   color: #fff;
 }
 body {
-  background: url("/images/bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
+  background: #eee;
+  color: #555;
 }
