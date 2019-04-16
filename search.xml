@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[hexo + github + nexT 创建博客]]></title>
     <url>%2Funcategorized%2Fhexo-github-%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[准备工作 下载node.js并安装（官网下载安装），默认会安装npm。 下载安装git（官网下载安装） 下载安装hexo。方法：打开cmd运行npm install -g hexo（要翻墙） 本地搭建hexo静态博客 新建一个文件夹，如MyBlog 进入该文件夹内，右击运行git，输入：hexo init（生成hexo模板，可能要翻墙） 生成完模板，运行npm install 最后运行：hexo server（运行程序，访问本地localhost:4000可以看到博客已经搭建成功） 说明：如果npm install -g hexo 出现npm ERR! code Z_BUF_ERROR，出现这种问题是npm的缓存问题 npm cache clean –force 将博客与Github关联 在Github上创建名字为XXX.github.io的项目（必须是public），XXX为自己的github用户名。 打开本地的MyBlog文件夹项目内的_config.yml配置文件，将其中的type设置为git 1234deploy: type: git repository: https://github.com/ouscan/ouscan.github.io.git branch: master 运行：npm install hexo-deployer-git –save 运行：hexo g（本地生成静态文件） 运行：hexo d（将本地静态文件推送至Github） 此时，打开浏览器，访问http://ouscan.github.io]]></content>
   </entry>
   <entry>
     <title><![CDATA[Hello World]]></title>
