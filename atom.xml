@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-04-16T10:14:39.569Z</updated>
+  <updated>2019-04-17T06:55:18.514Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,65 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在windows下用nvm 安装node</title>
+    <link href="http://yoursite.com/uncategorized/%E5%9C%A8windows%E4%B8%8B%E7%94%A8nvm-%E5%AE%89%E8%A3%85node/"/>
+    <id>http://yoursite.com/uncategorized/在windows下用nvm-安装node/</id>
+    <published>2019-04-17T06:51:45.000Z</published>
+    <updated>2019-04-17T06:55:18.514Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;注：现在node的新版本已默认安装了npm&lt;/p&gt;
+&lt;h3 id=&quot;1-nvm-下载&quot;&gt;&lt;a href=&quot;#1-nvm-下载&quot; class=&quot;headerlink&quot; title=&quot;1.   nvm 下载&quot;&gt;&lt;/a&gt;1.   nvm 下载&lt;/h3&gt;&lt;hr&gt;
+&lt;p&gt;nvm 的下
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Spring Boot 二</title>
+    <link href="http://yoursite.com/uncategorized/Spring-Boot-%E4%BA%8C/"/>
+    <id>http://yoursite.com/uncategorized/Spring-Boot-二/</id>
+    <published>2019-04-17T06:36:55.000Z</published>
+    <updated>2019-04-17T06:44:11.333Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;一、搭建基本环境&quot;&gt;&lt;a href=&quot;#一、搭建基本环境&quot; class=&quot;headerlink&quot; title=&quot;一、搭建基本环境&quot;&gt;&lt;/a&gt;一、搭建基本环境&lt;/h3&gt;&lt;p&gt;1、导入数据库文件 创建出department和employee表&lt;br&gt; 2、创建Java
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Spring Boot 一</title>
+    <link href="http://yoursite.com/uncategorized/Spring-Boot-%E4%B8%80/"/>
+    <id>http://yoursite.com/uncategorized/Spring-Boot-一/</id>
+    <published>2019-04-17T06:26:49.000Z</published>
+    <updated>2019-04-17T06:36:22.284Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;一、Spring-Boot-入门&quot;&gt;&lt;a href=&quot;#一、Spring-Boot-入门&quot; class=&quot;headerlink&quot; title=&quot;一、Spring Boot 入门&quot;&gt;&lt;/a&gt;一、Spring Boot 入门&lt;/h2&gt;&lt;h3 id=&quot;1、spring-
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>hexo + github + nexT 创建博客</title>
