@@ -102,7 +102,7 @@
     <link href="http://yoursite.com/hexo/hexo-github-%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
     <id>http://yoursite.com/hexo/hexo-github-创建博客/</id>
     <published>2019-04-15T03:00:00.000Z</published>
-    <updated>2019-04-17T07:15:41.569Z</updated>
+    <updated>2019-04-17T07:28:32.275Z</updated>
     
     <summary type="html">
     
@@ -118,6 +118,10 @@
     
     
       <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+      <category term="github" scheme="http://yoursite.com/tags/github/"/>
+    
+      <category term="nexT" scheme="http://yoursite.com/tags/nexT/"/>
     
   </entry>
   
