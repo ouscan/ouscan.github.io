@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-04-17T06:55:18.514Z</updated>
+  <updated>2019-04-17T07:10:11.544Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/uncategorized/%E5%9C%A8windows%E4%B8%8B%E7%94%A8nvm-%E5%AE%89%E8%A3%85node/"/>
     <id>http://yoursite.com/uncategorized/在windows下用nvm-安装node/</id>
     <published>2019-04-17T06:51:45.000Z</published>
-    <updated>2019-04-17T06:55:18.514Z</updated>
+    <updated>2019-04-17T07:10:11.544Z</updated>
     
     <summary type="html">
     
@@ -34,6 +34,8 @@
     
     </summary>
     
+    
+      <category term="nvm node" scheme="http://yoursite.com/tags/nvm-node/"/>
     
   </entry>
   
