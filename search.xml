@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[learning materials]]></title>
+    <url>%2Fstudy%2Flearning-materials%2F</url>
+    <content type="text"><![CDATA[博客菜鸟教程 w3school在线教程web前端开发ideal相关使用教程jQuery之家 developerworks developerWorks 上最受欢迎的 Java 内容 小程序 git基本操作 git进阶分支操作-看不懂，右下角 切 英文 前端工程师手册 spring boot参考指南 requirejsbackbonejdfmock servernode.jsLuavue.jsbootstrap Spring MVC 4.2.4.RELEASE 中文文档 Java 面试笔记Redis开发运维实践指南 项目框架 Spring boot Mybatis 整合（完整版） 优秀的Spring Boot 文章（泥瓦匠BYSocket） 实例（githup） windows7环境下安装Linux（ubuntu64）虚拟机教程]]></content>
+      <categories>
+        <category>study</category>
+      </categories>
+      <tags>
+        <tag>study</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Json转化为Java对象（object，List等）]]></title>
     <url>%2FJava%2Fjson%2FJson%E8%BD%AC%E5%8C%96%E4%B8%BAJava%E5%AF%B9%E8%B1%A1%EF%BC%88object%EF%BC%8CList%E7%AD%89%EF%BC%89%2F</url>
     <content type="text"><![CDATA[问题：前后端数据交互时，经常会遇到Json串与Java对象转化的问题，有的Java对象中还包含了List对象等。 解决方案： 引入 json-lib包，Maven坐标如下： 123456 &lt;dependency&gt; &lt;groupId&gt;net.sf.json-lib&lt;/groupId&gt; &lt;artifactId&gt;json-lib&lt;/artifactId&gt; &lt;version&gt;2.4&lt;/version&gt; &lt;classifier&gt;jdk15&lt;/classifier&gt;&lt;/dependency&gt;123456 Json串转化为List对象: 1234JSONArray jsonArray = JSONArray.fromObject(jsonString);List&lt;Config&gt; list = (List) JSONArray.toCollection(jsonArray, Class.class);1234 Json串转化为Object对象 12JSONObject jsonObject = JSONObject.fromObject(jsonString);Object object = (Object) JSONObject.toBean(jsonObject, Object.class);12 Json串转化为包含List对象的Object对象 1234567JSONObject jsonObject = JSONObject.fromObject(jsonString);Map&lt;String, Class&gt; listMap = new HashMap&lt;String, Class&gt;();listMap.put(&quot;list&quot;, listObject.class);Object object = (Object) JSONObject.toBean(jsonObject, Object.class, listMap);1234567 PS：Object对象中可能包含了多个对象，对象中可能又包含了多个List对象互相嵌套。只需要把所有的List对象值组装成Map对象即可，对应的key为List对象的属性名称。]]></content>
