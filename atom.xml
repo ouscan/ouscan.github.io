@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.ouscan.com/"/>
-  <updated>2019-04-17T07:20:02.799Z</updated>
+  <updated>2019-04-17T08:26:06.081Z</updated>
   <id>https://www.ouscan.com/</id>
   
   <author>
@@ -15,6 +15,92 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Json转化为Java对象（object，List等）</title>
+    <link href="https://www.ouscan.com/Java/json/Json%E8%BD%AC%E5%8C%96%E4%B8%BAJava%E5%AF%B9%E8%B1%A1%EF%BC%88object%EF%BC%8CList%E7%AD%89%EF%BC%89/"/>
+    <id>https://www.ouscan.com/Java/json/Json转化为Java对象（object，List等）/</id>
+    <published>2019-04-17T08:25:03.000Z</published>
+    <updated>2019-04-17T08:26:06.081Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;问题：前后端数据交互时，经常会遇到Json串与Java对象转化的问题，有的Java对象中还包含了List对象等。&lt;/p&gt;
+&lt;p&gt;解决方案： &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;引入 json-lib包，Maven坐标如下：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;hig
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://www.ouscan.com/categories/Java/"/>
+    
+      <category term="json" scheme="https://www.ouscan.com/categories/Java/json/"/>
+    
+    
+      <category term="json" scheme="https://www.ouscan.com/tags/json/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>fastJson过滤字段(深层次)</title>
+    <link href="https://www.ouscan.com/Java/fastJson/fastJson%E8%BF%87%E6%BB%A4%E5%AD%97%E6%AE%B5-%E6%B7%B1%E5%B1%82%E6%AC%A1/"/>
+    <id>https://www.ouscan.com/Java/fastJson/fastJson过滤字段-深层次/</id>
+    <published>2019-04-17T08:20:07.000Z</published>
+    <updated>2019-04-17T08:22:25.335Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;前言:前后端分离,一般都是返回JSON数据,但是有时候需要返回指定的属性,那么就有如下几种方式:&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://www.ouscan.com/categories/Java/"/>
+    
+      <category term="fastJson" scheme="https://www.ouscan.com/categories/Java/fastJson/"/>
+    
+    
+      <category term="fastJson" scheme="https://www.ouscan.com/tags/fastJson/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring Boot整合Ehcache实现缓存功能</title>
+    <link href="https://www.ouscan.com/Java/Spring-Boot/Ehcache/Spring-Boot%E6%95%B4%E5%90%88Ehcache%E5%AE%9E%E7%8E%B0%E7%BC%93%E5%AD%98%E5%8A%9F%E8%83%BD/"/>
+    <id>https://www.ouscan.com/Java/Spring-Boot/Ehcache/Spring-Boot整合Ehcache实现缓存功能/</id>
+    <published>2019-04-17T08:14:03.000Z</published>
+    <updated>2019-04-17T08:17:37.249Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;这里介绍Spring Boot结合JPA，MySQL和Ehcache实现缓存功能，提高程序访问效率。&lt;/p&gt;
+&lt;h3 id=&quot;一、Maven依赖&quot;&gt;&lt;a href=&quot;#一、Maven依赖&quot; class=&quot;headerlink&quot; title=&quot;一、Maven依赖&quot;&gt;&lt;/a&gt;一
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://www.ouscan.com/categories/Java/"/>
+    
+      <category term="Spring Boot" scheme="https://www.ouscan.com/categories/Java/Spring-Boot/"/>
+    
+      <category term="Ehcache" scheme="https://www.ouscan.com/categories/Java/Spring-Boot/Ehcache/"/>
+    
+    
+      <category term="Spring Boot" scheme="https://www.ouscan.com/tags/Spring-Boot/"/>
+    
+      <category term="ehcache" scheme="https://www.ouscan.com/tags/ehcache/"/>
+    
+  </entry>
   
   <entry>
     <title>在windows下用nvm 安装node</title>

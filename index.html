@@ -365,6 +365,583 @@
     
  </div>
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.ouscan.com/Java/json/Json转化为Java对象（object，List等）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jaune lau">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="再回首">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/Java/json/Json转化为Java对象（object，List等）/" class="post-title-link" itemprop="url">Json转化为Java对象（object，List等）</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-04-17 16:25:03 / Modified: 16:26:06" itemprop="dateCreated datePublished" datetime="2019-04-17T16:25:03+08:00">2019-04-17</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/json/" itemprop="url" rel="index"><span itemprop="name">json</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>问题：前后端数据交互时，经常会遇到Json串与Java对象转化的问题，有的Java对象中还包含了List对象等。</p>
+<p>解决方案： </p>
+<ol>
+<li>引入 json-lib包，Maven坐标如下：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;net.sf.json-lib&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;json-lib&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;2.4&lt;/version&gt;</span><br><span class="line">            &lt;classifier&gt;jdk15&lt;/classifier&gt;</span><br><span class="line">&lt;/dependency&gt;123456</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Json串转化为List对象:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">JSONArray jsonArray = JSONArray.fromObject(jsonString);</span><br><span class="line"></span><br><span class="line">List&lt;Config&gt; list = (List) JSONArray.toCollection(jsonArray,</span><br><span class="line">                    Class.class);1234</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Json串转化为Object对象</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">JSONObject jsonObject = JSONObject.fromObject(jsonString);</span><br><span class="line">Object object = (Object) JSONObject.toBean(jsonObject, Object.class);12</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Json串转化为包含List对象的Object对象</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">JSONObject jsonObject = JSONObject.fromObject(jsonString);</span><br><span class="line"></span><br><span class="line">Map&lt;String, Class&gt; listMap = new HashMap&lt;String, Class&gt;();</span><br><span class="line">listMap.put(&quot;list&quot;, listObject.class);</span><br><span class="line"></span><br><span class="line">Object object = (Object) JSONObject.toBean(jsonObject, Object.class, listMap);</span><br><span class="line">1234567</span><br></pre></td></tr></table></figure>
+<p>PS：Object对象中可能包含了多个对象，对象中可能又包含了多个List对象互相嵌套。<br>只需要把所有的List对象值组装成Map对象即可，对应的key为List对象的属性名称。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+	<div>
+      
+	</div>
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div>
+    
+ </div>
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.ouscan.com/Java/fastJson/fastJson过滤字段-深层次/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jaune lau">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="再回首">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/Java/fastJson/fastJson过滤字段-深层次/" class="post-title-link" itemprop="url">fastJson过滤字段(深层次)</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-04-17 16:20:07 / Modified: 16:22:25" itemprop="dateCreated datePublished" datetime="2019-04-17T16:20:07+08:00">2019-04-17</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/fastJson/" itemprop="url" rel="index"><span itemprop="name">fastJson</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>前言:前后端分离,一般都是返回JSON数据,但是有时候需要返回指定的属性,那么就有如下几种方式:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">* 第一种：在对象响应字段前加注解，这样生成的json也不包含该字段。</span><br><span class="line">* @JSONField(serialize=false)</span><br><span class="line">* private String name;</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">* 第二种：在对象对应字段前面加transient，表示该字段不用序列化，即在生成json的时候就不会包含该字段了。</span><br><span class="line">* private transient String name;</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">* 第三种：使用fastjson的拦截器</span><br><span class="line">* PropertyFilter profilter = new PropertyFilter()&#123;</span><br><span class="line">@Override</span><br><span class="line">public boolean apply(Object object, String name, Object value) &#123;</span><br><span class="line">if(name.equalsIgnoreCase(&quot;last&quot;))&#123;</span><br><span class="line">//false表示last字段将被排除在外</span><br><span class="line">return false;</span><br><span class="line">&#125;</span><br><span class="line">return true;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line">json = JSON.toJSONString(user, profilter);</span><br><span class="line">System.out.println(json);</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">* 第四种，直接填写属性(就是你需要什么属性,你就用什么属性)</span><br><span class="line">* SimplePropertyPreFilter filter = new SimplePropertyPreFilter(TTown.class, &quot;id&quot;,&quot;townname&quot;);</span><br><span class="line">response.getWriter().write(JSONObject.toJSONString(townList,filter));</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//第五种:深层次过滤</span><br><span class="line">//TTown1对象中有属性名称为TTown2对象,只需要TTown1的id属性包括TTown2对象的id属性</span><br><span class="line">SimplePropertyPreFilter filter1 = new SimplePropertyPreFilter(TTown1.class, &quot;id&quot;,&quot;townname&quot;);</span><br><span class="line">SimplePropertyPreFilter filter2 = new SimplePropertyPreFilter(TTown2.class, &quot;id&quot;,&quot;townname&quot;);</span><br><span class="line">SerializeFilter[] filters=new SerializeFilter[]&#123;filter1,filter2&#125;;</span><br><span class="line">System.out.println(JSONObject.toJSONString(result, filters));</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+	<div>
+      
+	</div>
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div>
+    
+ </div>
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.ouscan.com/Java/Spring-Boot/Ehcache/Spring-Boot整合Ehcache实现缓存功能/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jaune lau">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="再回首">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/Java/Spring-Boot/Ehcache/Spring-Boot整合Ehcache实现缓存功能/" class="post-title-link" itemprop="url">Spring Boot整合Ehcache实现缓存功能</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-04-17 16:14:03 / Modified: 16:17:37" itemprop="dateCreated datePublished" datetime="2019-04-17T16:14:03+08:00">2019-04-17</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/Spring-Boot/" itemprop="url" rel="index"><span itemprop="name">Spring Boot</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/Spring-Boot/Ehcache/" itemprop="url" rel="index"><span itemprop="name">Ehcache</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这里介绍Spring Boot结合JPA，MySQL和Ehcache实现缓存功能，提高程序访问效率。</p>
+<h3 id="一、Maven依赖"><a href="#一、Maven依赖" class="headerlink" title="一、Maven依赖"></a>一、Maven依赖</h3><p>主要依赖如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;</span><br><span class="line">         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line"></span><br><span class="line">    &lt;groupId&gt;springboot.example&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;springboot-ehcache&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</span><br><span class="line">    &lt;packaging&gt;jar&lt;/packaging&gt;</span><br><span class="line">    &lt;description&gt;Spring Boot整合EhCache实现缓存功能&lt;/description&gt;</span><br><span class="line"></span><br><span class="line">    &lt;parent&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;1.5.8.RELEASE&lt;/version&gt;</span><br><span class="line">        &lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;</span><br><span class="line">    &lt;/parent&gt;</span><br><span class="line"></span><br><span class="line">    &lt;properties&gt;</span><br><span class="line">        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</span><br><span class="line">        &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;</span><br><span class="line">        &lt;java.version&gt;1.8&lt;/java.version&gt;</span><br><span class="line">    &lt;/properties&gt;</span><br><span class="line"></span><br><span class="line">    &lt;dependencies&gt;</span><br><span class="line"></span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;</span><br><span class="line">            &lt;scope&gt;runtime&lt;/scope&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;</span><br><span class="line">            &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- caching --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-cache&lt;/artifactId&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;net.sf.ehcache&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;ehcache&lt;/artifactId&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- 数据库依赖 --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;mysql&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</span><br><span class="line">            &lt;scope&gt;runtime&lt;/scope&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/dependencies&gt;</span><br><span class="line"></span><br><span class="line">    &lt;build&gt;</span><br><span class="line">        &lt;plugins&gt;</span><br><span class="line">            &lt;plugin&gt;</span><br><span class="line">                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">            &lt;/plugin&gt;</span><br><span class="line">        &lt;/plugins&gt;</span><br><span class="line">    &lt;/build&gt;</span><br><span class="line"></span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+<p>上面的依赖中包括了Spring Boot的核心依赖，Ehcache依赖还有数据库JPA和MySQL的依赖。</p>
+<h3 id="二、程序的主要代码实现"><a href="#二、程序的主要代码实现" class="headerlink" title="二、程序的主要代码实现"></a>二、程序的主要代码实现</h3><p>1、Spring Boot程序的入口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">package com.lemon.springboot.application;</span><br><span class="line"></span><br><span class="line">import org.springframework.boot.SpringApplication;</span><br><span class="line">import org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line">import org.springframework.cache.annotation.EnableCaching;</span><br><span class="line">import org.springframework.context.annotation.ComponentScan;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * @author lemon</span><br><span class="line"> */</span><br><span class="line">@SpringBootApplication</span><br><span class="line">@ComponentScan(&#123;&quot;com.lemon.springboot&quot;&#125;)</span><br><span class="line">// 启用缓存注解</span><br><span class="line">@EnableCaching</span><br><span class="line">public class MainApplication &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        SpringApplication.run(MainApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的三个注解：<br> 1）@SpringBootApplication表明是一个Spring Boot应用；<br> 2）@ComponentScan({“com.lemon.springboot”})扫描指定包内的注解；<br> 3）@EnableCaching启动缓存注解（也就是说使项目内部的缓存相关的注解生效）</p>
+<p>2、application.yml和ehcache.xml配置文件<br> 配置文件中关于数据库配置这一块仅仅配置了开发模式，生产模式和特使模式没有配置。所以启用的也是开发者模式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  profiles:</span><br><span class="line">    active: dev</span><br><span class="line">  # 缓存配置</span><br><span class="line">  cache:</span><br><span class="line">    type: ehcache</span><br><span class="line">    ehcache:</span><br><span class="line">      config: classpath:ehcache.xml</span><br><span class="line"></span><br><span class="line"># 日志配置</span><br><span class="line">logging:</span><br><span class="line">  file: /Users/lemon/IdeaProjects/springboot/lemon.log</span><br><span class="line">  level: info</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">spring:</span><br><span class="line">  profiles: dev</span><br><span class="line">  # 数据库配置</span><br><span class="line">  datasource:</span><br><span class="line">      driverClassName: com.mysql.jdbc.Driver</span><br><span class="line">      url: jdbc:mysql://192.168.25.11:3306/ehcachetest?characterEncoding=utf8</span><br><span class="line">      username: root</span><br><span class="line">      password: 123456</span><br><span class="line">  jpa:</span><br><span class="line">    database: MYSQL</span><br><span class="line">    show-sql: true</span><br><span class="line">    hibernate:</span><br><span class="line">      ddl-auto: update</span><br><span class="line">      naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy</span><br><span class="line">      use_sql_comments: false</span><br><span class="line">      format_sql: true</span><br><span class="line">      hbm2ddl_auto: update</span><br><span class="line">      generate_statistics: false</span><br><span class="line">      validation_mode: none</span><br><span class="line">      store_data_at_delete: true</span><br><span class="line">      global_with_modified_flag: true</span><br><span class="line">    properties:</span><br><span class="line">      hibernate:</span><br><span class="line">        dialect: org.hibernate.dialect.MySQL5Dialect</span><br><span class="line">server:</span><br><span class="line">  port: 8080</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">spring:</span><br><span class="line">  profiles: pro</span><br><span class="line">server:</span><br><span class="line">  port: 8081</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">spring:</span><br><span class="line">  profiles: test</span><br><span class="line">server:</span><br><span class="line">  port: 8082</span><br></pre></td></tr></table></figure>
+<p>ehcache.xml配置文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;ehcache xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">         xsi:noNamespaceSchemaLocation=&quot;http://ehcache.org/ehcache.xsd&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;cache name=&quot;lemonCache&quot;</span><br><span class="line">           eternal=&quot;false&quot;</span><br><span class="line">           maxEntriesLocalHeap=&quot;0&quot;</span><br><span class="line">           timeToIdleSeconds=&quot;200&quot;/&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- eternal：true表示对象永不过期，此时会忽略timeToIdleSeconds和timeToLiveSeconds属性，默认为false --&gt;</span><br><span class="line">    &lt;!-- maxEntriesLocalHeap：堆内存中最大缓存对象数，0没有限制 --&gt;</span><br><span class="line">    &lt;!-- timeToIdleSeconds： 设定允许对象处于空闲状态的最长时间，以秒为单位。当对象自从最近一次被访问后，</span><br><span class="line">    如果处于空闲状态的时间超过了timeToIdleSeconds属性值，这个对象就会过期，EHCache将把它从缓存中清空。</span><br><span class="line">    只有当eternal属性为false，该属性才有效。如果该属性值为0，则表示对象可以无限期地处于空闲状态 --&gt;</span><br><span class="line">&lt;/ehcache&gt;</span><br></pre></td></tr></table></figure>
+<p>3、实体类<br> 这里新建一个实体类，用来创造对象存入数据库和缓存。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">package com.lemon.springboot.domain;</span><br><span class="line"></span><br><span class="line">import javax.persistence.*;</span><br><span class="line">import java.util.Date;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * @author lemon</span><br><span class="line"> */</span><br><span class="line">@Entity</span><br><span class="line">@Table(name = &quot;user&quot;)</span><br><span class="line">public class User &#123;</span><br><span class="line"></span><br><span class="line">    @Id</span><br><span class="line">    @GeneratedValue</span><br><span class="line">    private Integer id;</span><br><span class="line">    @Column</span><br><span class="line">    private String name;</span><br><span class="line">    @Column</span><br><span class="line">    private Integer age;</span><br><span class="line">    @Column</span><br><span class="line">    private String address;</span><br><span class="line">    @Column</span><br><span class="line">    private Date createTime;</span><br><span class="line"></span><br><span class="line">    public Date getCreateTime() &#123;</span><br><span class="line">        return createTime;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setCreateTime(Date createTime) &#123;</span><br><span class="line">        this.createTime = createTime;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Integer getId() &#123;</span><br><span class="line">        return id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setId(Integer id) &#123;</span><br><span class="line">        this.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getName() &#123;</span><br><span class="line">        return name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setName(String name) &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Integer getAge() &#123;</span><br><span class="line">        return age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setAge(Integer age) &#123;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getAddress() &#123;</span><br><span class="line">        return address;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setAddress(String address) &#123;</span><br><span class="line">        this.address = address;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public String toString() &#123;</span><br><span class="line">        return &quot;User&#123;&quot; +</span><br><span class="line">                &quot;id=&quot; + id +</span><br><span class="line">                &quot;, name=&apos;&quot; + name + &apos;\&apos;&apos; +</span><br><span class="line">                &quot;, age=&quot; + age +</span><br><span class="line">                &quot;, address=&apos;&quot; + address + &apos;\&apos;&apos; +</span><br><span class="line">                &quot;, createTime=&quot; + createTime +</span><br><span class="line">                &apos;&#125;&apos;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>4、与数据库交互的Repository<br> 创建一个与数据库交互的Repository，这个Repository只需要继承JpaRepository即可，对于简单的增删改查，就不需要额外扩展功能了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">package com.lemon.springboot.repository;</span><br><span class="line"></span><br><span class="line">import com.lemon.springboot.domain.User;</span><br><span class="line">import org.springframework.data.jpa.repository.JpaRepository;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * @author lemon</span><br><span class="line"> */</span><br><span class="line">public interface UserRepository extends JpaRepository&lt;User, Integer&gt; &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于Spring Boot应用，需要创建JPA的配置类：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line">package com.lemon.springboot.configuration;</span><br><span class="line"></span><br><span class="line">import org.springframework.beans.factory.annotation.Value;</span><br><span class="line">import org.springframework.boot.autoconfigure.domain.EntityScan;</span><br><span class="line">import org.springframework.context.annotation.Bean;</span><br><span class="line">import org.springframework.context.annotation.Configuration;</span><br><span class="line">import org.springframework.core.Ordered;</span><br><span class="line">import org.springframework.core.annotation.Order;</span><br><span class="line">import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;</span><br><span class="line">import org.springframework.data.jpa.repository.config.EnableJpaRepositories;</span><br><span class="line">import org.springframework.jdbc.datasource.DriverManagerDataSource;</span><br><span class="line">import org.springframework.orm.jpa.JpaTransactionManager;</span><br><span class="line">import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;</span><br><span class="line">import org.springframework.orm.jpa.vendor.Database;</span><br><span class="line">import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;</span><br><span class="line">import org.springframework.transaction.PlatformTransactionManager;</span><br><span class="line">import org.springframework.transaction.annotation.EnableTransactionManagement;</span><br><span class="line">import org.springframework.transaction.support.TransactionTemplate;</span><br><span class="line"></span><br><span class="line">import javax.sql.DataSource;</span><br><span class="line">import java.util.Properties;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * JPA配置类</span><br><span class="line"> *</span><br><span class="line"> * @author lemon</span><br><span class="line"> */</span><br><span class="line">@Order(Ordered.HIGHEST_PRECEDENCE)</span><br><span class="line">@Configuration</span><br><span class="line">@EnableTransactionManagement(proxyTargetClass = true)</span><br><span class="line">@EnableJpaRepositories(basePackages = &quot;com.lemon.springboot.repository&quot;)</span><br><span class="line">@EntityScan(basePackages = &quot;com.lemon.springboot.domain&quot;)</span><br><span class="line">public class JpaConfiguration &#123;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;spring.datasource.driverClassName&#125;&quot;)</span><br><span class="line">    private String driverClassName;</span><br><span class="line">    @Value(&quot;$&#123;spring.datasource.url&#125;&quot;)</span><br><span class="line">    private String url;</span><br><span class="line">    @Value(&quot;$&#123;spring.datasource.username&#125;&quot;)</span><br><span class="line">    private String username;</span><br><span class="line">    @Value(&quot;$&#123;spring.datasource.password&#125;&quot;)</span><br><span class="line">    private String password;</span><br><span class="line">    @Value(&quot;$&#123;spring.jpa.properties.hibernate.dialect&#125;&quot;)</span><br><span class="line">    private String dialect;</span><br><span class="line">    @Value(&quot;$&#123;spring.jpa.show-sql&#125;&quot;)</span><br><span class="line">    private String showSql;</span><br><span class="line">    @Value(&quot;$&#123;spring.jpa.hibernate.use_sql_comments&#125;&quot;)</span><br><span class="line">    private String useSqlComments;</span><br><span class="line">    @Value(&quot;$&#123;spring.jpa.hibernate.format_sql&#125;&quot;)</span><br><span class="line">    private String formatSql;</span><br><span class="line">    @Value(&quot;$&#123;spring.jpa.hibernate.hbm2ddl_auto&#125;&quot;)</span><br><span class="line">    private String hbm2ddlAuto;</span><br><span class="line">    @Value(&quot;$&#123;spring.jpa.hibernate.generate_statistics&#125;&quot;)</span><br><span class="line">    private String generateStatistics;</span><br><span class="line">    @Value(&quot;$&#123;spring.jpa.hibernate.validation_mode&#125;&quot;)</span><br><span class="line">    private String validationMode;</span><br><span class="line">    @Value(&quot;$&#123;spring.jpa.hibernate.store_data_at_delete&#125;&quot;)</span><br><span class="line">    private String storeDataAtDelete;</span><br><span class="line">    @Value(&quot;$&#123;spring.jpa.hibernate.global_with_modified_flag&#125;&quot;)</span><br><span class="line">    private String globalWithModifiedFlag;</span><br><span class="line"></span><br><span class="line">    @Bean</span><br><span class="line">    PersistenceExceptionTranslationPostProcessor persistenceExceptionTranslationPostProcessor() &#123;</span><br><span class="line">        return new PersistenceExceptionTranslationPostProcessor();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Bean</span><br><span class="line">    public DataSource dataSource() &#123;</span><br><span class="line">        DriverManagerDataSource dataSource = new DriverManagerDataSource();</span><br><span class="line">        dataSource.setDriverClassName(driverClassName);</span><br><span class="line">        dataSource.setUrl(url);</span><br><span class="line">        dataSource.setUsername(username);</span><br><span class="line">        dataSource.setPassword(password);</span><br><span class="line">        return dataSource;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Bean</span><br><span class="line">    public LocalContainerEntityManagerFactoryBean entityManagerFactory() &#123;</span><br><span class="line">        LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();</span><br><span class="line">        entityManagerFactoryBean.setDataSource(dataSource());</span><br><span class="line">        entityManagerFactoryBean.setPackagesToScan(&quot;com.lemon.springboot.domain&quot;);</span><br><span class="line">        entityManagerFactoryBean.setJpaProperties(buildHibernateProperties());</span><br><span class="line">        entityManagerFactoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter() &#123;&#123;</span><br><span class="line">            setDatabase(Database.MYSQL);</span><br><span class="line">        &#125;&#125;);</span><br><span class="line">        return entityManagerFactoryBean;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    protected Properties buildHibernateProperties() &#123;</span><br><span class="line">        Properties hibernateProperties = new Properties();</span><br><span class="line">        hibernateProperties.setProperty(&quot;hibernate.dialect&quot;, dialect);</span><br><span class="line">        hibernateProperties.setProperty(&quot;hibernate.show_sql&quot;, showSql);</span><br><span class="line">        hibernateProperties.setProperty(&quot;hibernate.use_sql_comments&quot;, useSqlComments);</span><br><span class="line">        hibernateProperties.setProperty(&quot;hibernate.format_sql&quot;, formatSql);</span><br><span class="line">        hibernateProperties.setProperty(&quot;hibernate.hbm2ddl.auto&quot;, hbm2ddlAuto);</span><br><span class="line">        hibernateProperties.setProperty(&quot;hibernate.generate_statistics&quot;, generateStatistics);</span><br><span class="line">        hibernateProperties.setProperty(&quot;javax.persistence.validation.mode&quot;, validationMode);</span><br><span class="line"></span><br><span class="line">        //Audit History flags</span><br><span class="line">        hibernateProperties.setProperty(&quot;org.hibernate.envers.store_data_at_delete&quot;, storeDataAtDelete);</span><br><span class="line">        hibernateProperties.setProperty(&quot;org.hibernate.envers.global_with_modified_flag&quot;, globalWithModifiedFlag);</span><br><span class="line"></span><br><span class="line">        return hibernateProperties;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Bean</span><br><span class="line">    public PlatformTransactionManager transactionManager() &#123;</span><br><span class="line">        return new JpaTransactionManager();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Bean</span><br><span class="line">    public TransactionTemplate transactionTemplate() &#123;</span><br><span class="line">        return new TransactionTemplate(transactionManager());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>5、与缓存相关的代码<br> EhcacheRepository：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">package com.lemon.springboot.repository;</span><br><span class="line"></span><br><span class="line">import com.lemon.springboot.domain.User;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * @author lemon</span><br><span class="line"> */</span><br><span class="line">public interface EhcacheRepository &#123;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 增加用户</span><br><span class="line">     * @param user 用户</span><br><span class="line">     * @return 增加后的用户</span><br><span class="line">     */</span><br><span class="line">    User save(User user);</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 查询用户</span><br><span class="line">     * @param id 主键</span><br><span class="line">     * @return 用户</span><br><span class="line">     */</span><br><span class="line">    User selectById(Integer id);</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 更新用户</span><br><span class="line">     * @param user 更新的用户</span><br><span class="line">     * @return 用户</span><br><span class="line">     */</span><br><span class="line">    User updateById(User user);</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 删除用户</span><br><span class="line">     * @param id 主键</span><br><span class="line">     * @return 删除状态</span><br><span class="line">     */</span><br><span class="line">    String deleteById(Integer id);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>它的实现类：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">package com.lemon.springboot.repository.impl;</span><br><span class="line"></span><br><span class="line">import com.lemon.springboot.domain.User;</span><br><span class="line">import com.lemon.springboot.repository.EhcacheRepository;</span><br><span class="line">import com.lemon.springboot.repository.UserRepository;</span><br><span class="line">import org.slf4j.Logger;</span><br><span class="line">import org.slf4j.LoggerFactory;</span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.cache.annotation.CacheConfig;</span><br><span class="line">import org.springframework.cache.annotation.CacheEvict;</span><br><span class="line">import org.springframework.cache.annotation.CachePut;</span><br><span class="line">import org.springframework.cache.annotation.Cacheable;</span><br><span class="line">import org.springframework.stereotype.Repository;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * @author lemon</span><br><span class="line"> */</span><br><span class="line">// cacheNames为ehcache.xml配置文件内的配置名称</span><br><span class="line">@CacheConfig(cacheNames = &#123;&quot;lemonCache&quot;&#125;)</span><br><span class="line">@Repository</span><br><span class="line">public class EhcacheRepositoryImpl implements EhcacheRepository &#123;</span><br><span class="line"></span><br><span class="line">    private static final Logger logger = LoggerFactory.getLogger(EhcacheRepository.class);</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private UserRepository userRepository;</span><br><span class="line"></span><br><span class="line">    @CachePut(key = &quot;#p0&quot;)</span><br><span class="line">    @Override</span><br><span class="line">    public User save(User user) &#123;</span><br><span class="line">        User savedUser = userRepository.save(user);</span><br><span class="line">        logger.info(&quot;新增功能，同步到缓存，直接写入数据库，ID为：&quot; + savedUser.getId());</span><br><span class="line">        return savedUser;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Cacheable(key = &quot;#p0&quot;)</span><br><span class="line">    @Override</span><br><span class="line">    public User selectById(Integer id) &#123;</span><br><span class="line">        logger.info(&quot;查询功能，缓存未找到，直接读取数据库，ID为：&quot; + id);</span><br><span class="line">        return userRepository.findOne(id);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @CachePut(key = &quot;#p0&quot;)</span><br><span class="line">    @Override</span><br><span class="line">    public User updateById(User user) &#123;</span><br><span class="line">        logger.info(&quot;更新功能，更新缓存，直接更新数据库，ID为：&quot; + user.getId());</span><br><span class="line">        return userRepository.save(user);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @CacheEvict(key = &quot;#p0&quot;)</span><br><span class="line">    @Override</span><br><span class="line">    public String deleteById(Integer id) &#123;</span><br><span class="line">        logger.info(&quot;删除功能，删除缓存，直接删除数据库数据，ID为：&quot; + id);</span><br><span class="line">        userRepository.delete(id);</span><br><span class="line">        return &quot;删除成功&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意：<br> 1）@CacheConfig(cacheNames = {“lemonCache”})设置了ehcache的名称，这个名称就是ehcache.xml内的名称；<br> 2）@Cacheable：应用到读取数据的方法上，即可缓存的方法，如查找方法：先从缓存中读取，如果没有再调 用方法获取数据，然后把数据添加到缓存中，适用于查找；<br> 3）@CachePut：主要针对方法配置，能够根据方法的请求参数对其结果进行缓存，和 @Cacheable 不同的是，它每次都会触发真实方法的调用。适用于更新和插入；<br> 4）@CacheEvict：主要针对方法配置，能够根据一定的条件对缓存进行清空。适用于删除。</p>
+<h3 id="三、测试的Controller"><a href="#三、测试的Controller" class="headerlink" title="三、测试的Controller"></a>三、测试的Controller</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">package com.lemon.springboot.controller;</span><br><span class="line"></span><br><span class="line">import com.lemon.springboot.domain.User;</span><br><span class="line">import com.lemon.springboot.repository.EhcacheRepository;</span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.stereotype.Controller;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestParam;</span><br><span class="line">import org.springframework.web.bind.annotation.ResponseBody;</span><br><span class="line"></span><br><span class="line">import java.util.Date;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * @author lemon</span><br><span class="line"> */</span><br><span class="line">@Controller</span><br><span class="line">@RequestMapping(&quot;/ehcache&quot;)</span><br><span class="line">public class EhcacheController &#123;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private EhcacheRepository ehcacheRepository;</span><br><span class="line"></span><br><span class="line">    @RequestMapping(&quot;/save&quot;)</span><br><span class="line">    @ResponseBody</span><br><span class="line">    public User save() &#123;</span><br><span class="line">        User user = new User();</span><br><span class="line">        user.setName(&quot;lemon&quot;);</span><br><span class="line">        user.setAge(20);</span><br><span class="line">        user.setAddress(&quot;Wuhan&quot;);</span><br><span class="line">        user.setCreateTime(new Date());</span><br><span class="line">        return ehcacheRepository.save(user);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @RequestMapping(&quot;/select&quot;)</span><br><span class="line">    @ResponseBody</span><br><span class="line">    public User get(@RequestParam(defaultValue = &quot;1&quot;) Integer id) &#123;</span><br><span class="line">        return ehcacheRepository.selectById(id);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @RequestMapping(&quot;/update&quot;)</span><br><span class="line">    @ResponseBody</span><br><span class="line">    public User update(@RequestParam(defaultValue = &quot;1&quot;) Integer id) &#123;</span><br><span class="line">        User user = ehcacheRepository.selectById(id);</span><br><span class="line">        user.setName(&quot;TestName&quot;);</span><br><span class="line">        user.setCreateTime(new Date());</span><br><span class="line">        return ehcacheRepository.updateById(user);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @RequestMapping(&quot;/delete&quot;)</span><br><span class="line">    @ResponseBody</span><br><span class="line">    public String delete(@RequestParam(defaultValue = &quot;1&quot;) Integer id) &#123;</span><br><span class="line">        return ehcacheRepository.deleteById(id);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>启动项目，打开浏览器，输入地址：<a href="https://link.jianshu.com?t=http://localhost:8080/ehcache/save" target="_blank" rel="noopener">http://localhost:8080/ehcache/save</a>就可以实现插入数据，再输入<a href="https://link.jianshu.com?t=http://localhost:8080/ehcache/select?id=1" target="_blank" rel="noopener">http://localhost:8080/ehcache/select?id=1</a>就可以查询到数据，这时候观察控制台或者日志就可以发现，查询的时候并没有去访问数据库，而是直接在缓存中查询了，至于更新和删除，道理是一样的。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+	<div>
+      
+	</div>
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div>
+    
+ </div>
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.ouscan.com/前端/nvm/node/在windows下用nvm-安装node/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1806,7 +2383,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1835,7 +2412,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -1864,7 +2447,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
