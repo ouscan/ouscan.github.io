@@ -5,9 +5,9 @@
   <subtitle>Develop with pleasure!</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://www.ouscan.com/"/>
   <updated>2019-04-17T07:20:02.799Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://www.ouscan.com/</id>
   
   <author>
     <name>Jaune lau</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>在windows下用nvm 安装node</title>
-    <link href="http://yoursite.com/%E5%89%8D%E7%AB%AF/nvm/node/%E5%9C%A8windows%E4%B8%8B%E7%94%A8nvm-%E5%AE%89%E8%A3%85node/"/>
-    <id>http://yoursite.com/前端/nvm/node/在windows下用nvm-安装node/</id>
+    <link href="https://www.ouscan.com/%E5%89%8D%E7%AB%AF/nvm/node/%E5%9C%A8windows%E4%B8%8B%E7%94%A8nvm-%E5%AE%89%E8%A3%85node/"/>
+    <id>https://www.ouscan.com/前端/nvm/node/在windows下用nvm-安装node/</id>
     <published>2019-04-17T06:51:45.000Z</published>
     <updated>2019-04-17T07:20:02.799Z</updated>
     
@@ -34,23 +34,23 @@
     
     </summary>
     
-      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://www.ouscan.com/categories/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="nvm" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/nvm/"/>
+      <category term="nvm" scheme="https://www.ouscan.com/categories/%E5%89%8D%E7%AB%AF/nvm/"/>
     
-      <category term="node" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/nvm/node/"/>
+      <category term="node" scheme="https://www.ouscan.com/categories/%E5%89%8D%E7%AB%AF/nvm/node/"/>
     
     
-      <category term="nvm" scheme="http://yoursite.com/tags/nvm/"/>
+      <category term="nvm" scheme="https://www.ouscan.com/tags/nvm/"/>
     
-      <category term="node" scheme="http://yoursite.com/tags/node/"/>
+      <category term="node" scheme="https://www.ouscan.com/tags/node/"/>
     
   </entry>
   
   <entry>
     <title>Spring Boot 二</title>
-    <link href="http://yoursite.com/Java/Spring-Boot/Spring-Boot-%E4%BA%8C/"/>
-    <id>http://yoursite.com/Java/Spring-Boot/Spring-Boot-二/</id>
+    <link href="https://www.ouscan.com/Java/Spring-Boot/Spring-Boot-%E4%BA%8C/"/>
+    <id>https://www.ouscan.com/Java/Spring-Boot/Spring-Boot-二/</id>
     <published>2019-04-17T06:36:55.000Z</published>
     <updated>2019-04-17T07:18:56.790Z</updated>
     
@@ -63,19 +63,19 @@
     
     </summary>
     
-      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+      <category term="Java" scheme="https://www.ouscan.com/categories/Java/"/>
     
-      <category term="Spring Boot" scheme="http://yoursite.com/categories/Java/Spring-Boot/"/>
+      <category term="Spring Boot" scheme="https://www.ouscan.com/categories/Java/Spring-Boot/"/>
     
     
-      <category term="Spring Boot" scheme="http://yoursite.com/tags/Spring-Boot/"/>
+      <category term="Spring Boot" scheme="https://www.ouscan.com/tags/Spring-Boot/"/>
     
   </entry>
   
   <entry>
     <title>Spring Boot 一</title>
-    <link href="http://yoursite.com/Java/Spring-Boot/Spring-Boot-%E4%B8%80/"/>
-    <id>http://yoursite.com/Java/Spring-Boot/Spring-Boot-一/</id>
+    <link href="https://www.ouscan.com/Java/Spring-Boot/Spring-Boot-%E4%B8%80/"/>
+    <id>https://www.ouscan.com/Java/Spring-Boot/Spring-Boot-一/</id>
     <published>2019-04-17T06:26:49.000Z</published>
     <updated>2019-04-17T07:19:06.439Z</updated>
     
@@ -88,19 +88,19 @@
     
     </summary>
     
-      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+      <category term="Java" scheme="https://www.ouscan.com/categories/Java/"/>
     
-      <category term="Spring Boot" scheme="http://yoursite.com/categories/Java/Spring-Boot/"/>
+      <category term="Spring Boot" scheme="https://www.ouscan.com/categories/Java/Spring-Boot/"/>
     
     
-      <category term="Spring Boot" scheme="http://yoursite.com/tags/Spring-Boot/"/>
+      <category term="Spring Boot" scheme="https://www.ouscan.com/tags/Spring-Boot/"/>
     
   </entry>
   
   <entry>
     <title>hexo + github + nexT 创建博客</title>
-    <link href="http://yoursite.com/hexo/hexo-github-%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://yoursite.com/hexo/hexo-github-创建博客/</id>
+    <link href="https://www.ouscan.com/hexo/hexo-github-%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>https://www.ouscan.com/hexo/hexo-github-创建博客/</id>
     <published>2019-04-15T03:00:00.000Z</published>
     <updated>2019-04-17T07:28:32.275Z</updated>
     
@@ -114,21 +114,21 @@
     
     </summary>
     
-      <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
+      <category term="hexo" scheme="https://www.ouscan.com/categories/hexo/"/>
     
     
-      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+      <category term="hexo" scheme="https://www.ouscan.com/tags/hexo/"/>
     
-      <category term="github" scheme="http://yoursite.com/tags/github/"/>
+      <category term="github" scheme="https://www.ouscan.com/tags/github/"/>
     
-      <category term="nexT" scheme="http://yoursite.com/tags/nexT/"/>
+      <category term="nexT" scheme="https://www.ouscan.com/tags/nexT/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/uncategorized/hello-world/"/>
-    <id>http://yoursite.com/uncategorized/hello-world/</id>
+    <link href="https://www.ouscan.com/uncategorized/hello-world/"/>
+    <id>https://www.ouscan.com/uncategorized/hello-world/</id>
     <published>2019-04-14T08:53:03.413Z</published>
     <updated>2019-04-14T08:53:03.413Z</updated>
     
