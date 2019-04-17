@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-04-17T07:10:11.544Z</updated>
+  <updated>2019-04-17T07:20:02.799Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>在windows下用nvm 安装node</title>
-    <link href="http://yoursite.com/uncategorized/%E5%9C%A8windows%E4%B8%8B%E7%94%A8nvm-%E5%AE%89%E8%A3%85node/"/>
-    <id>http://yoursite.com/uncategorized/在windows下用nvm-安装node/</id>
+    <link href="http://yoursite.com/%E5%89%8D%E7%AB%AF/nvm/node/%E5%9C%A8windows%E4%B8%8B%E7%94%A8nvm-%E5%AE%89%E8%A3%85node/"/>
+    <id>http://yoursite.com/前端/nvm/node/在windows下用nvm-安装node/</id>
     <published>2019-04-17T06:51:45.000Z</published>
-    <updated>2019-04-17T07:10:11.544Z</updated>
+    <updated>2019-04-17T07:20:02.799Z</updated>
     
     <summary type="html">
     
@@ -34,17 +34,25 @@
     
     </summary>
     
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="nvm node" scheme="http://yoursite.com/tags/nvm-node/"/>
+      <category term="nvm" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/nvm/"/>
+    
+      <category term="node" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/nvm/node/"/>
+    
+    
+      <category term="nvm" scheme="http://yoursite.com/tags/nvm/"/>
+    
+      <category term="node" scheme="http://yoursite.com/tags/node/"/>
     
   </entry>
   
   <entry>
     <title>Spring Boot 二</title>
-    <link href="http://yoursite.com/uncategorized/Spring-Boot-%E4%BA%8C/"/>
-    <id>http://yoursite.com/uncategorized/Spring-Boot-二/</id>
+    <link href="http://yoursite.com/Java/Spring-Boot/Spring-Boot-%E4%BA%8C/"/>
+    <id>http://yoursite.com/Java/Spring-Boot/Spring-Boot-二/</id>
     <published>2019-04-17T06:36:55.000Z</published>
-    <updated>2019-04-17T06:44:11.333Z</updated>
+    <updated>2019-04-17T07:18:56.790Z</updated>
     
     <summary type="html">
     
@@ -55,15 +63,21 @@
     
     </summary>
     
+      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+    
+      <category term="Spring Boot" scheme="http://yoursite.com/categories/Java/Spring-Boot/"/>
+    
+    
+      <category term="Spring Boot" scheme="http://yoursite.com/tags/Spring-Boot/"/>
     
   </entry>
   
   <entry>
     <title>Spring Boot 一</title>
-    <link href="http://yoursite.com/uncategorized/Spring-Boot-%E4%B8%80/"/>
-    <id>http://yoursite.com/uncategorized/Spring-Boot-一/</id>
+    <link href="http://yoursite.com/Java/Spring-Boot/Spring-Boot-%E4%B8%80/"/>
+    <id>http://yoursite.com/Java/Spring-Boot/Spring-Boot-一/</id>
     <published>2019-04-17T06:26:49.000Z</published>
-    <updated>2019-04-17T06:36:22.284Z</updated>
+    <updated>2019-04-17T07:19:06.439Z</updated>
     
     <summary type="html">
     
@@ -74,15 +88,21 @@
     
     </summary>
     
+      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+    
+      <category term="Spring Boot" scheme="http://yoursite.com/categories/Java/Spring-Boot/"/>
+    
+    
+      <category term="Spring Boot" scheme="http://yoursite.com/tags/Spring-Boot/"/>
     
   </entry>
   
   <entry>
     <title>hexo + github + nexT 创建博客</title>
-    <link href="http://yoursite.com/uncategorized/hexo-github-%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://yoursite.com/uncategorized/hexo-github-创建博客/</id>
+    <link href="http://yoursite.com/hexo/hexo-github-%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://yoursite.com/hexo/hexo-github-创建博客/</id>
     <published>2019-04-15T03:00:00.000Z</published>
-    <updated>2019-04-16T10:14:39.569Z</updated>
+    <updated>2019-04-17T07:15:41.569Z</updated>
     
     <summary type="html">
     
@@ -94,6 +114,10 @@
     
     </summary>
     
+      <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
     
   </entry>
   
