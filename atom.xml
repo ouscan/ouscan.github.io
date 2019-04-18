@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.ouscan.com/"/>
-  <updated>2019-04-17T08:55:59.250Z</updated>
+  <updated>2019-04-18T08:02:32.070Z</updated>
   <id>https://www.ouscan.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MyBatis-Plus的代码生成器AutoGenerator</title>
+    <link href="https://www.ouscan.com/MyBatis/MyBatis-Plus%E7%9A%84%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8AutoGenerator/"/>
+    <id>https://www.ouscan.com/MyBatis/MyBatis-Plus的代码生成器AutoGenerator/</id>
+    <published>2019-04-18T07:35:17.000Z</published>
+    <updated>2019-04-18T08:02:32.070Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;代码生成器&quot;&gt;&lt;a href=&quot;#代码生成器&quot; class=&quot;headerlink&quot; title=&quot;代码生成器&quot;&gt;&lt;/a&gt;代码生成器&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;AutoGenerator 是 MyBatis-Plus 的代码生成器，通过 AutoGenerat
+      
+    
+    </summary>
+    
+      <category term="MyBatis" scheme="https://www.ouscan.com/categories/MyBatis/"/>
+    
+    
+      <category term="MyBatis-Plus" scheme="https://www.ouscan.com/tags/MyBatis-Plus/"/>
+    
+      <category term="AutoGenerator" scheme="https://www.ouscan.com/tags/AutoGenerator/"/>
+    
+  </entry>
   
   <entry>
     <title>learning materials</title>
