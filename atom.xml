@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.ouscan.com/"/>
-  <updated>2019-04-18T08:02:32.070Z</updated>
+  <updated>2019-05-14T08:42:28.954Z</updated>
   <id>https://www.ouscan.com/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CentOS7安装Docker</title>
+    <link href="https://www.ouscan.com/uncategorized/CentOS7%E5%AE%89%E8%A3%85Docker/"/>
+    <id>https://www.ouscan.com/uncategorized/CentOS7安装Docker/</id>
+    <published>2019-05-14T08:42:28.000Z</published>
+    <updated>2019-05-14T08:42:28.954Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>MyBatis-Plus的代码生成器AutoGenerator</title>
