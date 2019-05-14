@@ -2,8 +2,16 @@
 <search>
   <entry>
     <title><![CDATA[CentOS7安装Docker]]></title>
-    <url>%2Funcategorized%2FCentOS7%E5%AE%89%E8%A3%85Docker%2F</url>
-    <content type="text"></content>
+    <url>%2Fdocker%2Fredis%2FCentOS7%E5%AE%89%E8%A3%85Docker%2F</url>
+    <content type="text"><![CDATA[1 、安装说明Docker支持以下的CentOS版本：CentOS 7 (64-bit)CentOS 6.5 (64-bit) 或更高的版本 — 前提条件 目前，CentOS 仅发行版本中的内核支持 Docker。 Docker 运行在 CentOS 7 上，要求系统为64位、系统内核版本为 3.10 以上。 Docker 运行在 CentOS-6.5 或更高的版本的 CentOS 上，要求系统为64位、系统内核版本为 2.6.32-431 或者更 2、使用 yum 安装（CentOS 7下）Docker 要求 CentOS 系统的内核版本高于 3.10 ，查看本页面的前提条件来验证你的CentOS 版本是否支持 Docker 。 1234567891011#查看你当前的内核版本uname -r#安装 Dockeryum -y install docker#启动 Docker 后台服务service docker start#测试运行 hello-world,由于本地没有hello-world这个镜像，所以会下载一个hello-world的镜像，并在容器内运行。docker run hello-world 使用脚本安装 Docker1、使用 sudo 或 root 权限登录 Centos。2、确保 yum 包更新到最新。 1234567891011#确保 yum 包更新到最新sudo yum update#执行 Docker 安装脚本,执行这个脚本会添加 docker.repo 源并安装 Docker。curl -fsSL https://get.docker.com/ | sh#启动 Docker 进程sudo service docker start#验证 docker 是否安装成功并在容器中执行一个测试的镜像sudo docker run hello-world 3、查看Docker版本1docker version 4、设置开机自启动1sudo systemctl enable docker 5、Docker中安装redis12#该方式默认下载的最新版本，如需要下载指定版本在redis后面跟:版本号docker pull redis 6、查看当前下载的redis镜像1docker images 7、启动Docker Redis镜像12# -p 主机端口：容器端口 -v 主机目录：容器目录docker run -it -p hostPort:containerPort -v hostDir:containerDir 8、挂载外部配置和数据安装1.创建目录和配置文件redis.conf 1234567891011121314151617181920212223242526272829#创建配置目录mkdir -p /home/docker/redis/conf#创建数据目录mkdir -p /home/docker/redis/data#创建redis配置文件touch /home/docker/redis/conf/redis.conf------------------------------redis.conf-----content---------------------------------#守护进程daemonize no#注释绑定本地IPbind 127.0.0.1#关闭保护模式protected-mode no#设置口令requirepass 123456------------------------------redis.conf-----content---------------------------------#启动容器docker run -it -d --privileged=true -p 6379:6379 -v /home/docker/redis/conf/redis.conf:/etc/redis/redis.conf -v /home/docker/redis/data:/data --name redis-4.0 redis:4.0 redis-server /etc/redis/redis.conf --appendonly yes#参数说明-d: 后台运行容器，并返回容器ID-i: 以交互模式运行容器，通常与 -t 同时使用-t: 为容器重新分配一个伪输入终端，通常与 -i 同时使用--privileged=true：容器内的root拥有真正root权限，否则容器内root只是外部普通用户权限-v /home/docker/redis/conf/redis.conf:/etc/redis/redis.conf：映射配置文件-v /home/docker/redis/data:/data：映射数据目录redis-server /etc/redis/redis.conf：指定配置文件启动redis-server进程--name : 指定容器名称，这个最好加上，不然看docker进程的时候会很尴尬--appendonly yes：开启数据持久化 9、Docker命令批量删除状态为Exited的容器1docker rm $(docker ps -q -f status=exited)]]></content>
+      <categories>
+        <category>docker</category>
+        <category>redis</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+        <tag>redis</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[MyBatis-Plus的代码生成器AutoGenerator]]></title>

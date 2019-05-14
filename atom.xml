@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.ouscan.com/"/>
-  <updated>2019-05-14T08:42:28.954Z</updated>
+  <updated>2019-05-14T09:30:19.985Z</updated>
   <id>https://www.ouscan.com/</id>
   
   <author>
@@ -18,15 +18,28 @@
   
   <entry>
     <title>CentOS7安装Docker</title>
-    <link href="https://www.ouscan.com/uncategorized/CentOS7%E5%AE%89%E8%A3%85Docker/"/>
-    <id>https://www.ouscan.com/uncategorized/CentOS7安装Docker/</id>
+    <link href="https://www.ouscan.com/docker/redis/CentOS7%E5%AE%89%E8%A3%85Docker/"/>
+    <id>https://www.ouscan.com/docker/redis/CentOS7安装Docker/</id>
     <published>2019-05-14T08:42:28.000Z</published>
-    <updated>2019-05-14T08:42:28.954Z</updated>
+    <updated>2019-05-14T09:30:19.985Z</updated>
     
     <summary type="html">
     
+      
+      
+        &lt;h4 id=&quot;1-、安装说明&quot;&gt;&lt;a href=&quot;#1-、安装说明&quot; class=&quot;headerlink&quot; title=&quot;1 、安装说明&quot;&gt;&lt;/a&gt;1 、安装说明&lt;/h4&gt;&lt;p&gt;Docker支持以下的CentOS版本：&lt;br&gt;CentOS 7 (64-bit)&lt;br&gt;CentO
+      
+    
     </summary>
     
+      <category term="docker" scheme="https://www.ouscan.com/categories/docker/"/>
+    
+      <category term="redis" scheme="https://www.ouscan.com/categories/docker/redis/"/>
+    
+    
+      <category term="docker" scheme="https://www.ouscan.com/tags/docker/"/>
+    
+      <category term="redis" scheme="https://www.ouscan.com/tags/redis/"/>
     
   </entry>
   
