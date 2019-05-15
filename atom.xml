@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.ouscan.com/"/>
-  <updated>2019-05-14T09:30:19.985Z</updated>
+  <updated>2019-05-15T09:04:21.974Z</updated>
   <id>https://www.ouscan.com/</id>
   
   <author>
@@ -17,11 +17,61 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>CentOS7安装Docker</title>
-    <link href="https://www.ouscan.com/docker/redis/CentOS7%E5%AE%89%E8%A3%85Docker/"/>
-    <id>https://www.ouscan.com/docker/redis/CentOS7安装Docker/</id>
+    <title>CentOS7安装jdk8</title>
+    <link href="https://www.ouscan.com/uncategorized/CentOS7%E5%AE%89%E8%A3%85%20jdk8/"/>
+    <id>https://www.ouscan.com/uncategorized/CentOS7安装 jdk8/</id>
+    <published>2019-05-15T08:48:43.000Z</published>
+    <updated>2019-05-15T09:04:21.974Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h5 id=&quot;1-更新系统软件&quot;&gt;&lt;a href=&quot;#1-更新系统软件&quot; class=&quot;headerlink&quot; title=&quot;1.更新系统软件&quot;&gt;&lt;/a&gt;1.更新系统软件&lt;/h5&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td cl
+      
+    
+    </summary>
+    
+    
+      <category term="centos" scheme="https://www.ouscan.com/tags/centos/"/>
+    
+      <category term="jdk8" scheme="https://www.ouscan.com/tags/jdk8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS7中Docker安装MySQL</title>
+    <link href="https://www.ouscan.com/docker/MySQL/CentOS7%E4%B8%ADDocker%20%E5%AE%89%E8%A3%85%20MySQL/"/>
+    <id>https://www.ouscan.com/docker/MySQL/CentOS7中Docker 安装 MySQL/</id>
+    <published>2019-05-15T08:42:28.000Z</published>
+    <updated>2019-05-15T09:34:58.275Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h5 id=&quot;1-创建mysql文件加&quot;&gt;&lt;a href=&quot;#1-创建mysql文件加&quot; class=&quot;headerlink&quot; title=&quot;1.创建mysql文件加&quot;&gt;&lt;/a&gt;1.创建mysql文件加&lt;/h5&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;
+      
+    
+    </summary>
+    
+      <category term="docker" scheme="https://www.ouscan.com/categories/docker/"/>
+    
+      <category term="MySQL" scheme="https://www.ouscan.com/categories/docker/MySQL/"/>
+    
+    
+      <category term="docker" scheme="https://www.ouscan.com/tags/docker/"/>
+    
+      <category term="MySQL" scheme="https://www.ouscan.com/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS7安装Docker安装Redis</title>
+    <link href="https://www.ouscan.com/docker/redis/CentOS7%E5%AE%89%E8%A3%85Docker%E5%AE%89%E8%A3%85Redis/"/>
+    <id>https://www.ouscan.com/docker/redis/CentOS7安装Docker安装Redis/</id>
     <published>2019-05-14T08:42:28.000Z</published>
-    <updated>2019-05-14T09:30:19.985Z</updated>
+    <updated>2019-05-15T09:07:50.942Z</updated>
     
     <summary type="html">
     
