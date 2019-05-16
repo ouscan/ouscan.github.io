@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.ouscan.com/"/>
-  <updated>2019-05-15T09:04:21.974Z</updated>
+  <updated>2019-05-16T08:40:24.283Z</updated>
   <id>https://www.ouscan.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>centos如何对外开放80，3306端口号或者其他端口号</title>
+    <link href="https://www.ouscan.com/uncategorized/centos%E5%A6%82%E4%BD%95%E5%AF%B9%E5%A4%96%E5%BC%80%E6%94%BE80%EF%BC%8C3306%E7%AB%AF%E5%8F%A3%E5%8F%B7%E6%88%96%E8%80%85%E5%85%B6%E4%BB%96%E7%AB%AF%E5%8F%A3%E5%8F%B7/"/>
+    <id>https://www.ouscan.com/uncategorized/centos如何对外开放80，3306端口号或者其他端口号/</id>
+    <published>2019-05-16T08:30:53.000Z</published>
+    <updated>2019-05-16T08:40:24.283Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;由于centos版本不同，开启端口号方式也不一样，centos6是iptables，centos7是firewall。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;查看防火墙对外开放了哪些端口&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;iptabl
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>CentOS7安装jdk8</title>
